@@ -1,0 +1,26 @@
+# Usage
+
+Refer to `examples` directory.
+Also, keep in mind you will need to define the following environment variables:
+
+- PGUSER
+- PGDATABASE
+- PGPASSWORD
+- PGHOST
+- PGPORT
+
+This accordingly to the `pg` module usage.
+
+# Database migration
+
+```
+class CreateMutexes < ActiveRecord::Migration
+  def change
+    create_table :mutexes, id: false do |t|
+      t.string :namespace
+      t.string :identifier
+    end
+    add_index :mutexes, [:namespace, :identifier], unique: true
+  end
+end
+```

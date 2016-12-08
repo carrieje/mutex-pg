@@ -1,0 +1,15 @@
+{
+  "name": "mutex-pg",
+  "version": "1.0.0",
+  "description": "Mutex library via PostgreSQL entries",
+  "main": "index.js",
+  "dependencies": {
+    "pg": "^6.1.1"
+  },
+  "scripts": {
+    "test": "nodeunit tests.js",
+    "truncate": "node examples/truncate.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
